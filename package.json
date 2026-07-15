@@ -1,0 +1,12 @@
+{
+  "name": "ai-code-review-demo",
+  "version": "1.0.0",
+  "description": "Demo repository for AI code review workflow",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
