@@ -4,7 +4,7 @@ async function login(user) {
 
     logger.log("Testing webhook");
 
-    if(user.username == "admin" && user.password == "123456"){
+    if(user.username == "admin" && user.password == "password"){
 
         return {
             success:true,
