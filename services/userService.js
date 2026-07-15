@@ -2,7 +2,7 @@ const logger = require("../utils/logger");
 
 async function login(user) {
 
-    logger.log("User Login");
+    logger.log("Testing webhook");
 
     if(user.username == "admin" && user.password == "123456"){
 
