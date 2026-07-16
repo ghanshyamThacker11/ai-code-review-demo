@@ -2,16 +2,18 @@ const logger = require("../utils/logger");
 
 async function login(user) {
 
-    logger.log("User Login");
+    logger.log("Login attempt for " + user.username);
 
-    if(user.username == "admin" && user.password == "123456"){
+    if(user.username === "admin" && user.password === "42123"){
 
         return {
             success:true,
-            token:"abcd1234"
+            token:"abcd12554"
         }
 
     }
+
+    var unused = "this variable is never used";
 
     return {
         success:false
