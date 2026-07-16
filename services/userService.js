@@ -2,7 +2,9 @@ const logger = require("../utils/logger");
 
 async function login(user) {
 
-    logger.log("User login attempt");
+    logger.log("User Login");
+
+    //toodo 
 
     if(user.username == "admin" && user.password == "123456"){
 
@@ -13,7 +15,6 @@ async function login(user) {
 
     }
 
-    // TODO: add rate limiting for repeated failed login attempts for some changes
     return {
         success:false
     }
