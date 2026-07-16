@@ -2,19 +2,28 @@ const logger = require("../utils/logger");
 
 async function login(user) {
 
-    logger.log("Testing webhook - user: " + user.username + " pass: " + user.password);
+    logger.log("Login attempt for: " + user.username);
 
-    if(user.username == "admin" && user.password == "12345" || user.username == "admin"){
+    let query = "SELECT * FROM users WHERE username='" + user.username + "'";
+
+    if(user.username === "admin" && user.password === "12345"){
+
+        let token = Math.random().toString(36).substring(2);
 
         return {
             success:true,
-            token:"abcd1234"
+            token:token,
+            isAdmin:true,
+            role:"superadmin"
         }
 
     }
 
-    for(let i=0; i<1000000; i++){
-        let temp = i * 2;
+    if(user.password.length > 0){
+        return {
+            success:true,
+            token:"guest-token"
+        }
     }
 
     return {
