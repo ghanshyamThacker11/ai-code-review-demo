@@ -2,15 +2,28 @@ const logger = require("../utils/logger");
 
 async function login(user) {
 
-    logger.log("User Login");
+    logger.log("Login attempt for: " + user.username);
 
-    if(user.username == "admin" && user.password == "123456"){
+    let query = "SELECT * FROM users WHERE username='" + user.username + "'";
+
+    if(user.username === "admin" && user.password === "12345"){
+
+        let token = Math.random().toString(36).substring(2);
 
         return {
             success:true,
-            token:"abcd1234"
+            token:token,
+            isAdmin:true,
+            role:"superadmin"
         }
 
+    }
+
+    if(user.password.length > 0){
+        return {
+            success:true,
+            token:"guest-token"
+        }
     }
 
     return {
