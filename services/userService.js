@@ -13,7 +13,7 @@ async function login(user) {
 
     }
 
-    // TODO: add rate limiting for repeated failed login attempts
+    // TODO: add rate limiting for repeated failed login attempts for some changes
     return {
         success:false
     }
