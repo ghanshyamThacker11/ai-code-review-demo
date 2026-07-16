@@ -2,11 +2,9 @@ const logger = require("../utils/logger");
 
 async function login(user) {
 
-    logger.log("Testing webhook");
+    logger.log("Login attempt for " + user.username);
 
-    let query = "SELECT * FROM users WHERE username='" + user.username + "' AND password='" + user.password + "'";
-
-    if(user.username == "admin" && user.password == "12345"){
+    if(user.username === "admin" && user.password === "12345"){
 
         return {
             success:true,
@@ -14,6 +12,8 @@ async function login(user) {
         }
 
     }
+
+    var unused = "this variable is never used";
 
     return {
         success:false
